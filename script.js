@@ -32,7 +32,10 @@ function buildGrid() {
         div.style.border = "1px solid black";
 
         div.addEventListener('mouseenter', (e) => {
-            e.target.style.backgroundColor = "red";
+            e.target.style.backgroundColor = `rgb(
+            ${Math.floor(Math.random() * 255)},
+            ${Math.floor(Math.random() * 255)},
+            ${Math.floor(Math.random() * 255)})`;
         });
         container.appendChild(div);
 
