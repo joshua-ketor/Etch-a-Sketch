@@ -11,6 +11,10 @@ for (let i = 0; i < size * size; i++) {
     div.style.height = `${divLength}px`;
     div.style.backgroundColor = "blue";
     div.style.border = "1px solid black";
+
+    div.addEventListener('mouseenter', (e) => {
+        e.target.style.backgroundColor = "red";
+    });
     container.appendChild(div);
 
 }
