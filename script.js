@@ -1,10 +1,26 @@
+const body = document.querySelector("body");
 const container = document.querySelector("#container");
+const btn = document.createElement("button");
 let size = 16;
 let div;
 const divLength = 20;
 
+btn.innerText = "Grid Length";
+btn.addEventListener('click', () => {
+    size = +prompt("Input grid length (1-100): ", 16);
+    // validate the size input
+    while (isNaN(size) || size < 1 || size > 100) {
+        size = +prompt("Input grid length (1-100): ", 16);
+    }
+    container.style.width = `${(divLength * size) + (size * 2)}px`
+    container.style.height = `${(divLength * size) + (size * 2)}px`
+    buildGrid(size);
+});
+
 container.style.width = `${(divLength * size) + (size * 2)}px`
 container.style.height = `${(divLength * size) + (size * 2)}px`
+
+body.insertBefore(btn, container);
 
 function buildGrid() {
     container.innerHTML = '';
