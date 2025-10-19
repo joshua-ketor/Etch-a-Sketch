@@ -1,5 +1,5 @@
 const container = document.querySelector("#container");
-const size = 16;
+let size = 16;
 let div;
 const divLength = 20;
 
